@@ -1,0 +1,13 @@
+html {
+  -webkit-app-region: drag;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+}
