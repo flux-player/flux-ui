@@ -272,6 +272,9 @@
     "yarn": "^1.21.1"
   },
   "dependencies": {
+    "@flux/collections": "file:../flux-collections",
+    "@flux/core": "file:../flux-core",
+    "@flux/utils": "file:../flux-utils",
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@hot-loader/react-dom": "^16.13.0",
     "connected-react-router": "^6.6.1",
