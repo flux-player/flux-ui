@@ -52,7 +52,7 @@ export default merge.smart(baseConfig, {
     ...(process.env.PLAIN_HMR ? [] : ['react-hot-loader/patch']),
     `webpack-dev-server/client?http://localhost:${port}/`,
     'webpack/hot/only-dev-server',
-    require.resolve('../app/index.tsx')
+    require.resolve('../app/background/index.ts')
   ],
 
   output: {
@@ -209,7 +209,7 @@ export default merge.smart(baseConfig, {
     }),
 
     new TypedCssModulesPlugin({
-      globPattern: 'app/**/*.{css,scss,sass}'
+      globPattern: 'app/background/**/*.{css,scss,sass}'
     }),
 
     new webpack.NoEmitOnErrorsPlugin(),
@@ -262,7 +262,7 @@ export default merge.smart(baseConfig, {
     },
     before() {
       if (process.env.START_HOT) {
-        console.log('Starting Main Process...');
+        console.log('Starting background Process...');
         spawn('npm', ['run', 'start-main-dev'], {
           shell: true,
           env: process.env,
